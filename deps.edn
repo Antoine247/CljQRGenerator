@@ -1,7 +1,10 @@
 {:paths ["src" "resources"]
+ :mvn/repos{"jumpmind" {:url "https://maven.jumpmind.com/repo/"}}
  :deps {org.clojure/clojure {:mvn/version "1.12.0-rc1"}
         net.glxn/qrgen {:mvn/version "1.4"}
-        babashka/fs {:mvn/version "0.5.22"}}
+        babashka/fs {:mvn/version "0.5.22"}
+        com.zebra/zsdk-api {:mvn/version "2.14.5198"}
+        selmer/selmer {:mvn/version "1.12.61"}}
  :aliases
  {:run-m {:main-opts ["-m" "antoine247.cljqrgenerator"]}
   :run-x {:ns-default antoine247.cljqrgenerator

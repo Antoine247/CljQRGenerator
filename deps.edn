@@ -4,7 +4,10 @@
         net.glxn/qrgen {:mvn/version "1.4"}
         babashka/fs {:mvn/version "0.5.22"}
         com.zebra/zsdk-api {:mvn/version "2.14.5198"}
-        selmer/selmer {:mvn/version "1.12.61"}}
+        selmer/selmer {:mvn/version "1.12.61"}
+        ring/ring-core {:mvn/version "1.12.2"}
+        ring/ring-jetty-adapter {:mvn/version "1.12.2"}
+        metosin/reitit {:mvn/version "0.7.1"}}
  :aliases
  {:run-m {:main-opts ["-m" "antoine247.cljqrgenerator"]}
   :run-x {:ns-default antoine247.cljqrgenerator

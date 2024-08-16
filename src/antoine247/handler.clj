@@ -1,10 +1,9 @@
 (ns antoine247.handler
-  (:use [ring.adapter.jetty]
-        [ring.util.response :as response] 
-        [ring.middleware.keyword-params]
-        [ring.middleware.params]
-        [antoine247.zebra :as zebra]
-        [reitit.ring :as ring]))
+  (:require [ring.adapter.jetty]
+            [ring.util.response :as response] 
+            [ring.middleware.params :refer [wrap-params]]
+            [antoine247.zebra :as zebra]
+            [reitit.ring :as ring]))
 
 (defn handler
   [{params :params :as request}]

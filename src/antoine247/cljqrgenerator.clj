@@ -1,6 +1,6 @@
 (ns antoine247.cljqrgenerator
-  (:use [ring.adapter.jetty]
-        [antoine247.handler :as handler]) 
+  (:require [ring.adapter.jetty :refer [run-jetty]]
+            [antoine247.handler :as handler])
   (:gen-class))
 
 (defn -main
@@ -11,6 +11,7 @@
 
 
 (comment
+  (defonce server (run-jetty handler/app {:port 3000 :join? false}))
   (.doStop server)
   (.start server)
-  (defonce server (run-jetty handler/app {:port 3000 :join? false})))
+  )

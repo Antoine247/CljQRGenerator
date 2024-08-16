@@ -7,9 +7,21 @@
         selmer/selmer {:mvn/version "1.12.61"}
         ring/ring-core {:mvn/version "1.12.2"}
         ring/ring-jetty-adapter {:mvn/version "1.12.2"}
-        metosin/reitit {:mvn/version "0.7.1"}}
+        metosin/reitit {:mvn/version "0.7.1"} 
+        com.brunobonacci/mulog {:mvn/version "0.9.0"}}
  :aliases
  {:run-m {:main-opts ["-m" "antoine247.cljqrgenerator"]}
+  :dev {:extra-paths ["dev"]
+        :extra-deps {djblue/portal {:mvn/version "0.57.2"}
+                     com.clojure-goes-fast/clj-java-decompiler {:mvn/version "0.3.6"}
+                     ring/ring-devel {:mvn/version "1.12.2"}}
+        :main-opts ["-m" "hotreload"]}
+  :nrepl {:extra-deps {nrepl/nrepl {:mvn/version "1.3.0"}
+                       cider/cider-nrepl {:mvn/version "0.47.1"}}
+          :main-opts ["-m" "nrepl.cmdline" "--middleware" "[cider.nrepl/cider-middleware]"]}
+  :eastwood {:extra-deps {jonase/eastwood {:mvn/version "1.4.3"}}
+             :main-opts ["-m" "eastwood.lint"]
+             :exec-fn jonase/eastwood.lint} 
   :run-x {:ns-default antoine247.cljqrgenerator
           :exec-fn greet
           :exec-args {:name "Clojure"}}

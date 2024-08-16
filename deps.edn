@@ -15,7 +15,7 @@
         :extra-deps {djblue/portal {:mvn/version "0.57.2"}
                      com.clojure-goes-fast/clj-java-decompiler {:mvn/version "0.3.6"}
                      ring/ring-devel {:mvn/version "1.12.2"}}
-        :main-opts ["-m" "hotreload"]}
+        #_#_:main-opts ["-m" "hotreload"]}
   :nrepl {:extra-deps {nrepl/nrepl {:mvn/version "1.3.0"}
                        cider/cider-nrepl {:mvn/version "0.47.1"}}
           :main-opts ["-m" "nrepl.cmdline" "--middleware" "[cider.nrepl/cider-middleware]"]}

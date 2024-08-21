@@ -27,7 +27,7 @@
       (catch IOException e (ex-message e)))))
 
 
-(comment
+#_(comment
   (print (generar-qr {:nombre "Antoine" :apellido "Chamoun" :hc 3242123}))
   
   (TcpConnection/new
@@ -53,7 +53,7 @@
                       (catch ZebraPrinterLanguageUnknownException e (.printStackTrace e))
                       (catch IOException e (.printStackTrace e))))))
   
-  (imprimir-zebra (generar-qr {:nombre "Antoine" :apellido "Chamoun" :hc 3242123}))
+  #_(imprimir-zebra (generar-qr {:nombre "Antoine" :apellido "Chamoun" :hc 3242123}))
   )
 
 

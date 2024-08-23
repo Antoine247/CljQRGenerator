@@ -3,7 +3,7 @@
   (:require [clojure.tools.build.api :as b]))
 
 (def lib 'net.clojars.antoine247/cljqrgenerator)
-(def version "0.1.0-SNAPSHOT")
+(def version "0.1.1-SNAPSHOT")
 (def main 'antoine247.cljqrgenerator)
 (def class-dir "target/classes")
 

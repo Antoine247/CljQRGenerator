@@ -1,10 +1,12 @@
 (ns antoine247.cljqrgenerator
   (:require [ring.adapter.jetty :refer [run-jetty]]
-            [antoine247.handler :as handler])
+            [antoine247.handler :refer [app]]
+            [mount.core :refer [defstate] :as mount])
   (:gen-class))
-
-(defn -main
-  "I don't do a whole lot ... yet."
+(defstate server :start (run-jetty app {:port (Integer/parseInt (System/getenv "cljqrport")) :join? false})
+  :stop(.stop server))
+(defn -main 
   [& args]
-  (run-jetty handler/app-handler {:port 3000}))
+  (mount/start)
+  (.addShutdownHook (Runtime/getRuntime) (Thread. mount/stop)))
 
